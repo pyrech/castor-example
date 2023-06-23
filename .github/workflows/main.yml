@@ -7,20 +7,23 @@ on:
 
 jobs:
   test:
-    name: Test Castor setup
-    runs-on: ubuntu-latest
+    name: Test Castor setup on every OS
+    strategy:
+      matrix:
+        os: [ubuntu-latest, darwin-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup PHP
+      - name: Setup PHP (${{ matrix.os }})
         uses: shivammathur/setup-php@develop
         with:
           php-version: '8.1'
           tools: castor
 
-      - name: Get castor version
+      - name: Get castor version (${{ matrix.os }})
         run: castor -V
 
-      - name: Run castor "hello" task
+      - name: Run castor "hello" task (${{ matrix.os }})
         run: castor hello
