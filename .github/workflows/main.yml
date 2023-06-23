@@ -19,5 +19,8 @@ jobs:
           php-version: '8.1'
           tools: castor
 
+      - name: Get castor version
+        run: castor -V
+
       - name: Run castor "hello" task
         run: castor hello
