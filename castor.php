@@ -1,5 +1,7 @@
 <?php
 
+namespace pyrech;
+
 use Castor\Attribute\AsTask;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -12,4 +14,10 @@ function hello(): void
     $currentUser = trim(run('whoami', quiet: true)->getOutput());
 
     io()->title(sprintf('Hello %s!', $currentUser));
+}
+
+#[AsTask()]
+function helloWorld(): void
+{
+    io()->title('Hello world!');
 }

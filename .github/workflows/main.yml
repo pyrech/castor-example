@@ -25,5 +25,5 @@ jobs:
       - name: Get castor version (${{ matrix.os }})
         run: castor -V
 
-      - name: Run castor "hello" task (${{ matrix.os }})
-        run: castor hello
+      - name: Run castor "pyrech:hello" task (${{ matrix.os }})
+        run: castor pyrech:hello
