@@ -1,5 +1,7 @@
 <?php
 
+namespace pyrech;
+
 use Castor\Attribute\AsTask;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
