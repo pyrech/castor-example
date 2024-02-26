@@ -11,7 +11,5 @@ use function Castor\run;
 #[AsTask(description: 'Hello from example!')]
 function helloExample(): void
 {
-    $currentUser = trim(run('whoami', quiet: true)->getOutput());
-
-    io()->title(sprintf('Hello %s!', $currentUser));
+    io()->title('Hello from example!');
 }
