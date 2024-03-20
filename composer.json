@@ -1,5 +1,5 @@
 {
     "name": "pyrech/castor-example",
     "license": "MIT",
-    "type": "project"
+    "type": "library"
 }
